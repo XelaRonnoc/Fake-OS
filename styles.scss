@@ -1,0 +1,14 @@
+body {
+    background: url(./images/backgroundImage.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+}
+
+.container {
+    &__icon {
+        width: 75px;
+        height: 75px;
+    }
+}
