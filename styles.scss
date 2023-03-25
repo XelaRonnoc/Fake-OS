@@ -1,3 +1,5 @@
+@use "bar";
+
 body {
     display: flex;
     background: url(./images/backgroundImage.jpg);
@@ -45,28 +47,4 @@ body {
     width: 1000px;
     border: 5px solid green;
     align-self: center;
-}
-
-.foot-container {
-    height: 50px;
-    background-color: gray;
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    z-index: 999;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-
-    &__menu {
-        background-color: blue;
-        height: 100%;
-        width: 300px;
-    }
-
-    &__time {
-        background-color: red;
-        height: 100%;
-        width: 300px;
-    }
 }
