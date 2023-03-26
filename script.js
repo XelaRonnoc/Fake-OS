@@ -6,10 +6,12 @@ const bodyTag = document.getElementsByTagName("body")[0];
 // console.log(menuPopUp);
 // console.log(menuButton);
 
-const openMenu = () => {
+// const openMenu = () => {};
+
+menuButton.addEventListener("click", (e) => {
     menuPopUp.classList.toggle("foot-container__menu--hide");
-};
-menuButton.addEventListener("click", openMenu);
+    e.stopPropagation();
+});
 
 const exitApp = (app) => {
     return function () {
@@ -55,3 +57,8 @@ for (let i = 0; i < appShortcuts.length; i++) {
         console.log("app Opened");
     });
 }
+
+document.getElementsByTagName("body")[0].addEventListener("click", (e) => {
+    e.stopPropagation();
+    menuPopUp.classList.add("foot-container__menu--hide");
+});
