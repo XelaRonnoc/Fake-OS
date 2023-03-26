@@ -2,11 +2,7 @@ const menuButton = document.getElementById("menuButton");
 const menuPopUp = document.getElementById("menuPopUp");
 const appShortcuts = document.getElementsByClassName("app-shortcut");
 const bodyTag = document.getElementsByTagName("body")[0];
-// const appContainer = document.getElementById("appContainer");
-// console.log(menuPopUp);
-// console.log(menuButton);
-
-// const openMenu = () => {};
+const savedElements = [];
 
 menuButton.addEventListener("click", (e) => {
     menuPopUp.classList.toggle("foot-container__menu--hide");
@@ -19,7 +15,45 @@ const exitApp = (app) => {
         bodyTag.removeChild(app);
     };
 };
+
+const save = (header, bodyText) => {
+    console.log("save");
+    const textArray = [header, bodyText];
+    savedElements.push(textArray);
+    console.log(savedElements);
+};
+
+const formApp = (container) => {
+    console.log("chrome");
+    const form = document.createElement("form");
+    form.classList.add("form-container");
+    container.appendChild(form);
+
+    const headerInput = document.createElement("input");
+    headerInput.type = "text";
+    headerInput.placeholder = "Entry Header";
+    form.appendChild(headerInput);
+
+    const entryInput = document.createElement("textarea");
+    form.appendChild(entryInput);
+    const saveBtn = document.createElement("button");
+    const btnText = document.createTextNode("Save");
+    saveBtn.appendChild(btnText);
+    saveBtn.value = "save";
+
+    form.appendChild(saveBtn);
+    saveBtn.addEventListener("click", (e) => {
+        console.log("start");
+        save(headerInput.value, entryInput.value);
+        console.log("end");
+        e.preventDefault();
+        e.stopPropagation();
+    });
+};
+
 const makeAppBase = (list) => {
+    const classString = list.value;
+    console.log(classString);
     const appContainer = document.createElement("div");
     appContainer.classList.add("app-container");
     bodyTag.appendChild(appContainer);
@@ -45,11 +79,11 @@ const makeAppBase = (list) => {
     exitContainer.appendChild(exitSym);
 
     exitContainer.addEventListener("click", exitApp(appContainer));
-    return appContainer;
-};
 
-// const appContainer = makeAppBase();
-// appContainer.addEventListener("click", exitApp(appContainer));
+    if (classString.includes("chrome")) {
+        formApp(newAppBody);
+    }
+};
 
 for (let i = 0; i < appShortcuts.length; i++) {
     appShortcuts[i].addEventListener("click", (e) => {
