@@ -1,0 +1,17 @@
+.foot-container__time {
+    display: flex;
+    justify-content: flex-end;
+    gap: 5px;
+}
+
+#dateTime {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+#dateTime > p {
+    text-align: center;
+    padding: 0;
+    margin: 0px 30px;
+}

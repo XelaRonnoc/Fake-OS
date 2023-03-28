@@ -65,12 +65,13 @@
 }
 
 .app-container {
-  margin-right: 10%;
   height: 1000px;
   width: 1000px;
   border: 5px solid green;
   align-self: center;
+  justify-self: center;
   position: relative;
+  right: 10vw;
   display: flex;
   flex-direction: column;
 }
@@ -114,6 +115,31 @@
 }
 .form-container > button {
   height: 30px;
+}
+
+.foot-container__time {
+  display: flex;
+  justify-content: flex-end;
+  gap: 5px;
+}
+
+#dateTime {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#dateTime > p {
+  text-align: center;
+  padding: 0;
+  margin: 0px 30px;
+}
+
+.image-app {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 body {

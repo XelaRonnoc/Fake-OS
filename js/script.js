@@ -1,8 +1,15 @@
+import { updateDateTime } from "./dateTime.js";
+import { notesApp } from "./notesApp.js";
+import { imageApp } from "./imageApp.js";
+
 const menuButton = document.getElementById("menuButton");
 const menuPopUp = document.getElementById("menuPopUp");
 const appShortcuts = document.getElementsByClassName("app-shortcut");
 const bodyTag = document.getElementsByTagName("body")[0];
-const savedElements = [];
+export const savedElements = [];
+const dateTimeContatiner = document.getElementsByClassName(
+    "foot-container__time"
+)[0];
 
 menuButton.addEventListener("click", (e) => {
     menuPopUp.classList.toggle("foot-container__menu--hide");
@@ -61,10 +68,6 @@ const makeAppBase = (list) => {
     const newAppBody = document.createElement("div");
     newAppBody.classList.add("app-body");
     appContainer.appendChild(newAppBody);
-    const innerItem = document.createElement("h1");
-    const itemText = document.createTextNode(list);
-    innerItem.appendChild(itemText);
-    newAppBody.appendChild(innerItem);
 
     const newAppHead = document.createElement("div");
     newAppHead.classList.add("app-head");
@@ -82,6 +85,10 @@ const makeAppBase = (list) => {
 
     if (classString.includes("chrome")) {
         formApp(newAppBody);
+    } else if (classString.includes("stylus")) {
+        notesApp(newAppBody, savedElements);
+    } else if (classString.includes("unity")) {
+        imageApp(newAppBody);
     }
 };
 
@@ -96,3 +103,5 @@ document.getElementsByTagName("body")[0].addEventListener("click", (e) => {
     e.stopPropagation();
     menuPopUp.classList.add("foot-container__menu--hide");
 });
+
+updateDateTime(dateTimeContatiner);
