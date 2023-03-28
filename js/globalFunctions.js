@@ -13,7 +13,7 @@ export const addIconToFooter = (app) => {
         case "formApp":
             iconToAdd.classList.add("form-app");
             image.src =
-                "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/chrome/chrome-original-wordmark.svg";
+                "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/chrome/chrome-original.svg";
             break;
 
         case "imageApp":

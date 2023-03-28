@@ -3,9 +3,8 @@
 @use "formApp";
 @use "dateTime";
 @use "imageApp";
-
+@use "pallette";
 //sass --watch --no-source-map styles.scss styles.css
-
 body {
     display: flex;
     background: url(./images/backgroundImage.jpg);
@@ -27,7 +26,7 @@ body {
 .card {
     display: flex;
     flex-direction: column;
-    width: 100px;
+    width: 85px;
     height: 100px;
     justify-content: center;
     align-items: center;
@@ -41,5 +40,10 @@ body {
         margin: 0;
         font-size: small;
         color: white;
+    }
+
+    &:hover {
+        background-color: pallette.$desktopIconHighlightColor;
+        border: pallette.$desktopIconHighlightBorder;
     }
 }

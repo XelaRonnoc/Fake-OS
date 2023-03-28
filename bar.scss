@@ -1,6 +1,7 @@
+@use "pallette";
 .foot-container {
-    height: 50px;
-    background-color: gray;
+    height: 40px;
+    background-color: pallette.$footerBarColor;
     position: fixed;
     bottom: 0;
     left: 0;
@@ -10,7 +11,7 @@
     justify-content: space-between;
 
     &__menu {
-        background-color: blue;
+        background-color: pallette.$startMenuColor;
         height: 100%;
         width: 300px;
         display: flex;
@@ -19,12 +20,12 @@
 
         &--display {
             position: absolute;
-            transform: translateY(-50px);
+            transform: translateY(-40px);
             height: 300px;
             bottom: 0px;
             left: 0px;
             width: 100%;
-            background-color: darkgrey;
+            background-color: pallette.$startMenuColor;
             display: flex;
             flex-direction: column;
         }
@@ -38,13 +39,13 @@
         display: flex;
         height: 100%;
         width: 300px;
-        background-color: greenyellow;
         gap: 10px;
 
         &--holder {
             display: flex;
             align-items: center;
             justify-content: center;
+
             & > img {
                 width: 40px;
                 height: 40px;
@@ -55,42 +56,41 @@
     }
 
     &__time {
-        background-color: red;
+        color: aliceblue;
         height: 100%;
         width: 300px;
     }
 
     &--left {
         display: flex;
-        background-color: purple;
         width: 600px;
     }
 }
 
 #menuButton {
     border: none;
-    background-color: green;
+    background-color: pallette.$footerBarColor;
 
     width: 50px;
 
     & > .menu-icon {
+        color: aliceblue;
         font-size: 24px;
     }
 }
 
 #menuButton:hover {
-    background-color: darkgreen;
+    background-color: pallette.$footerBarHighlight;
 }
 
 .select-bar {
     width: 100%;
     margin: 0;
     height: 50px;
-    background-color: teal;
     display: flex;
     gap: 20px;
 
     &:hover {
-        background-color: darkslategray;
+        background-color: pallette.$startMenuHighlight;
     }
 }
