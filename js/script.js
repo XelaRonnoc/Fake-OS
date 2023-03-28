@@ -1,8 +1,8 @@
 import { updateDateTime } from "./dateTime.js";
 import { notesApp } from "./notesApp.js";
 import { imageApp } from "./imageApp.js";
-import { formApp } from "./formApp.js";
-import { savedElements } from "./formApp.js";
+import { formApp, savedElements } from "./formApp.js";
+import { removeItemFromFooter } from "./globalFunctions.js";
 
 const menuButton = document.getElementById("menuButton");
 const menuPopUp = document.getElementById("menuPopUp");
@@ -17,10 +17,11 @@ menuButton.addEventListener("click", (e) => {
     e.stopPropagation();
 });
 
-const exitApp = (app) => {
+const exitApp = (container, classString) => {
     return function () {
         console.log("exit");
-        bodyTag.removeChild(app);
+        bodyTag.removeChild(container);
+        removeItemFromFooter(classString);
     };
 };
 
@@ -47,13 +48,13 @@ const makeAppBase = (list) => {
     const exitSym = document.createTextNode("X");
     exitContainer.appendChild(exitSym);
 
-    exitContainer.addEventListener("click", exitApp(appContainer));
+    exitContainer.addEventListener("click", exitApp(appContainer, classString));
 
-    if (classString.includes("chrome")) {
+    if (classString.includes("form-app")) {
         formApp(newAppBody);
-    } else if (classString.includes("stylus")) {
+    } else if (classString.includes("notes-app")) {
         notesApp(newAppBody, savedElements);
-    } else if (classString.includes("unity")) {
+    } else if (classString.includes("image-app")) {
         imageApp(newAppBody);
     }
 };

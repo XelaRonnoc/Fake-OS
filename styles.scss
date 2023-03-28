@@ -4,6 +4,8 @@
 @use "dateTime";
 @use "imageApp";
 
+//sass --watch --no-source-map styles.scss styles.css
+
 body {
     display: flex;
     background: url(./images/backgroundImage.jpg);
@@ -20,7 +22,6 @@ body {
     width: 20vw;
     height: 90vh;
     gap: 30px;
-    border: 3px solid orange;
 }
 
 .card {
@@ -28,12 +29,10 @@ body {
     flex-direction: column;
     width: 100px;
     height: 100px;
-    border: 2px solid hotpink;
     justify-content: center;
     align-items: center;
 
     &__icon {
-        border: 2px solid teal;
         width: 75%;
         height: 75%;
     }

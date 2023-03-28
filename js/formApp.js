@@ -1,3 +1,5 @@
+import { addIconToFooter } from "./globalFunctions.js";
+
 export const savedElements = [];
 
 const save = (header, bodyText) => {
@@ -7,6 +9,7 @@ const save = (header, bodyText) => {
     console.log(savedElements);
 };
 export const formApp = (container) => {
+    addIconToFooter("formApp");
     console.log("chrome");
     const form = document.createElement("form");
     form.classList.add("form-container");

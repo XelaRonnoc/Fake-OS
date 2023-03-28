@@ -14,28 +14,28 @@
     </head>
     <body>
         <div class="icon-container">
-            <div class="icon-container__card card chrome">
+            <div class="icon-container__card card form-app">
                 <img
-                    class="card__icon app-shortcut chrome"
+                    class="card__icon app-shortcut form-app"
                     src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/chrome/chrome-original-wordmark.svg"
                 />
-                <p class="card__name chrome">Chrome</p>
+                <p class="card__name form-app">Chrome</p>
             </div>
 
-            <div class="icon-container__card card unity">
+            <div class="icon-container__card card image-app">
                 <img
-                    class="card__icon app-shortcut unity"
+                    class="card__icon app-shortcut image-app"
                     src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/unrealengine/unrealengine-original.svg"
                 />
-                <p class="card__name unity">Unity</p>
+                <p class="card__name image-app">Unity</p>
             </div>
 
-            <div class="icon-container__card card stylus">
+            <div class="icon-container__card card notes-app">
                 <img
-                    class="card__icon app-shortcut stylus"
+                    class="card__icon app-shortcut notes-app"
                     src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/stylus/stylus-original.svg"
                 />
-                <p class="card__name stylus">Stylus</p>
+                <p class="card__name notes-app">Stylus</p>
             </div>
         </div>
 
@@ -49,39 +49,44 @@
         </div> -->
 
         <footer class="foot-container">
-            <div class="foot-container__menu">
-                <button id="menuButton">
-                    <i class="devicon-windows8-original menu-icon"></i>
-                </button>
-                <div
-                    id="menuPopUp"
-                    class="foot-container__menu--hide foot-container__menu--display"
-                >
-                    <div class="select-bar app-shortcut chrome">
-                        <img
-                            class="select-bar__icon chrome"
-                            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/chrome/chrome-original-wordmark.svg"
-                        />
-                        <p class="chrome">Chrome</p>
-                    </div>
-                    <div class="select-bar app-shortcut unity">
-                        <img
-                            class="select-bar__icon unity"
-                            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/unrealengine/unrealengine-original.svg"
-                        />
-                        <p class="unity">Unity</p>
-                    </div>
-                    <div class="select-bar app-shortcut stylus">
-                        <img
-                            class="select-bar__icon stylus"
-                            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/stylus/stylus-original.svg"
-                        />
-                        <p class="stylus">Stylus</p>
+            <div class="foot-container--left">
+                <div class="foot-container__menu">
+                    <button id="menuButton">
+                        <i class="devicon-windows8-original menu-icon"></i>
+                    </button>
+                    <div
+                        id="menuPopUp"
+                        class="foot-container__menu--hide foot-container__menu--display"
+                    >
+                        <div class="select-bar app-shortcut form-app">
+                            <img
+                                class="select-bar__icon form-app"
+                                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/chrome/chrome-original-wordmark.svg"
+                            />
+                            <p class="form-app">Chrome</p>
+                        </div>
+                        <div class="select-bar app-shortcut image-app">
+                            <img
+                                class="select-bar__icon image-app"
+                                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/unrealengine/unrealengine-original.svg"
+                            />
+                            <p class="image-app">Unity</p>
+                        </div>
+                        <div class="select-bar app-shortcut notes-app">
+                            <img
+                                class="select-bar__icon notes-app"
+                                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/stylus/stylus-original.svg"
+                            />
+                            <p class="notes-app">Stylus</p>
+                        </div>
                     </div>
                 </div>
+                <div class="foot-container__icons"></div>
             </div>
 
-            <div class="foot-container__time"></div>
+            <div class="foot-container--right">
+                <div class="foot-container__time"></div>
+            </div>
         </footer>
     </body>
 </html>

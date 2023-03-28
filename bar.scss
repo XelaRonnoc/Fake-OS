@@ -34,11 +34,36 @@
             visibility: hidden;
         }
     }
+    &__icons {
+        display: flex;
+        height: 100%;
+        width: 300px;
+        background-color: greenyellow;
+        gap: 10px;
+
+        &--holder {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            & > img {
+                width: 40px;
+                height: 40px;
+                top: 0vh;
+                left: 0vw;
+            }
+        }
+    }
 
     &__time {
         background-color: red;
         height: 100%;
         width: 300px;
+    }
+
+    &--left {
+        display: flex;
+        background-color: purple;
+        width: 600px;
     }
 }
 
