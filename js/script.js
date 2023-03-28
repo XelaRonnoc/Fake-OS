@@ -1,12 +1,13 @@
 import { updateDateTime } from "./dateTime.js";
 import { notesApp } from "./notesApp.js";
 import { imageApp } from "./imageApp.js";
+import { formApp } from "./formApp.js";
+import { savedElements } from "./formApp.js";
 
 const menuButton = document.getElementById("menuButton");
 const menuPopUp = document.getElementById("menuPopUp");
 const appShortcuts = document.getElementsByClassName("app-shortcut");
 const bodyTag = document.getElementsByTagName("body")[0];
-export const savedElements = [];
 const dateTimeContatiner = document.getElementsByClassName(
     "foot-container__time"
 )[0];
@@ -21,41 +22,6 @@ const exitApp = (app) => {
         console.log("exit");
         bodyTag.removeChild(app);
     };
-};
-
-const save = (header, bodyText) => {
-    console.log("save");
-    const textArray = [header, bodyText];
-    savedElements.push(textArray);
-    console.log(savedElements);
-};
-
-const formApp = (container) => {
-    console.log("chrome");
-    const form = document.createElement("form");
-    form.classList.add("form-container");
-    container.appendChild(form);
-
-    const headerInput = document.createElement("input");
-    headerInput.type = "text";
-    headerInput.placeholder = "Entry Header";
-    form.appendChild(headerInput);
-
-    const entryInput = document.createElement("textarea");
-    form.appendChild(entryInput);
-    const saveBtn = document.createElement("button");
-    const btnText = document.createTextNode("Save");
-    saveBtn.appendChild(btnText);
-    saveBtn.value = "save";
-
-    form.appendChild(saveBtn);
-    saveBtn.addEventListener("click", (e) => {
-        console.log("start");
-        save(headerInput.value, entryInput.value);
-        console.log("end");
-        e.preventDefault();
-        e.stopPropagation();
-    });
 };
 
 const makeAppBase = (list) => {
