@@ -2,6 +2,7 @@ const openIconContainer = document.getElementsByClassName(
     "foot-container__icons"
 )[0];
 
+//adds coresponding icons to the footer when an app is opened
 export const addIconToFooter = (app) => {
     const iconToAdd = document.createElement("div");
     iconToAdd.classList.add("foot-container__icons--holder");
@@ -29,6 +30,8 @@ export const addIconToFooter = (app) => {
             break;
     }
 };
+
+//removes corresponding icon from footer when app closes
 export const removeItemFromFooter = (classString) => {
     const reqString = classString.split(" ").filter((item) => {
         return (

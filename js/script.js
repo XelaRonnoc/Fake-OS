@@ -17,6 +17,7 @@ menuButton.addEventListener("click", (e) => {
     e.stopPropagation();
 });
 
+// refactor so can be moved to global functions
 const exitApp = (container, classString) => {
     return function () {
         console.log("exit");
@@ -25,6 +26,7 @@ const exitApp = (container, classString) => {
     };
 };
 
+// refactor so can be moved to global functions
 const makeAppBase = (list) => {
     const classString = list.value;
     console.log(classString);
@@ -59,6 +61,7 @@ const makeAppBase = (list) => {
     }
 };
 
+// adds an event listner to each icon in appShortcuts Array
 for (let i = 0; i < appShortcuts.length; i++) {
     appShortcuts[i].addEventListener("click", (e) => {
         makeAppBase(e.target.classList);
@@ -66,9 +69,11 @@ for (let i = 0; i < appShortcuts.length; i++) {
     });
 }
 
+// makes windows menu pop uo
 document.getElementsByTagName("body")[0].addEventListener("click", (e) => {
     e.stopPropagation();
     menuPopUp.classList.add("foot-container__menu--hide");
 });
 
+//updates the time/date on clock in footer
 updateDateTime(dateTimeContatiner);

@@ -5,10 +5,11 @@ export const updateDateTime = (container) => {
     let day = date.getDate();
     let month = date.getMonth() + 1;
     let year = date.getFullYear();
-
     let curHour = date.getHours();
     let curMin = date.getMinutes();
     let ampm = "AM";
+
+    // changes to 12 hour time and adds leading 0s
     if (curHour > 12) {
         curHour = curHour - 12;
         ampm = "PM";
@@ -22,6 +23,7 @@ export const updateDateTime = (container) => {
     timeContainer.appendChild(timeText);
     innerDiv.appendChild(timeContainer);
 
+    //adds leading 0s to date
     if (month < 10) {
         month = "0" + month;
     }

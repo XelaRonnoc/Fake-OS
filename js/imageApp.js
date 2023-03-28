@@ -1,5 +1,6 @@
 import { addIconToFooter } from "./globalFunctions.js";
 
+// adds image to image app
 export const imageApp = (container) => {
     addIconToFooter("imageApp");
     const image = document.createElement("img");
