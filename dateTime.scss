@@ -1,3 +1,4 @@
+@use "pallette";
 .foot-container__time {
     display: flex;
     justify-content: flex-end;
@@ -9,9 +10,13 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+
+    &:hover {
+        background-color: pallette.$footerBarHighlight;
+    }
 }
 #dateTime > p {
     text-align: center;
     padding: 0;
-    margin: 0px 30px;
+    margin: 0px 10px;
 }
