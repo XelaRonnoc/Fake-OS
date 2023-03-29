@@ -42,6 +42,16 @@
             gap: 10px;
             display: flex;
             background-color: pallette.$footerBarHighlight;
+            border: 1px solid pallette.$searchBorderColor;
+
+            &:hover {
+                border: 2px solid pallette.$searchBorderColor;
+                height: 36px;
+                width: 232px;
+                & div {
+                    padding: 4px;
+                }
+            }
 
             & > input {
                 color: aliceblue;
@@ -49,7 +59,7 @@
                 border: none;
                 padding: 0;
                 margin: 0;
-                height: 40px;
+                height: 38px;
                 width: 200px;
                 outline: none;
             }
@@ -112,6 +122,13 @@
             font-size: 18px;
             padding-right: 5px;
         }
+    }
+
+    &__left-static-icon {
+        @extend %right-bar-mini-icon-style;
+        font-size: 18px;
+        padding: 10px;
+        margin: none;
     }
 
     &--left {
