@@ -76,4 +76,8 @@ document.getElementsByTagName("body")[0].addEventListener("click", (e) => {
 });
 
 //updates the time/date on clock in footer
+// setInterval(function () {
+//     updateDateTime(dateTimeContatiner);
+// }, 1000);
+
 updateDateTime(dateTimeContatiner);
