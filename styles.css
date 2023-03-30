@@ -165,7 +165,7 @@
 }
 
 .app-container {
-  height: 1000px;
+  height: 80vh;
   width: 1000px;
   align-self: center;
   justify-self: center;
@@ -271,9 +271,9 @@
 .form-app-container__body {
   display: flex;
   flex-direction: column;
-  justify-content: center;
 }
 .form-app-container__body--form {
+  justify-self: flex-start;
   display: flex;
   flex-direction: column;
 }

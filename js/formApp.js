@@ -15,6 +15,7 @@ export const fillFormApp = (container) => {
     const form = document.createElement("form");
     form.classList.add("form-app-container__body--form");
     container.appendChild(form);
+    container.style.justifyContent = "initial";
 
     const headerInput = document.createElement("input");
     headerInput.type = "text";
@@ -22,7 +23,7 @@ export const fillFormApp = (container) => {
     form.appendChild(headerInput);
 
     const entryInput = document.createElement("textarea");
-    entryInput.rows = 58;
+    entryInput.rows = 20; // 58 = full at 1000px
     entryInput.placeholder = "Write Reminder text here";
     form.appendChild(entryInput);
     const saveBtn = document.createElement("button");
@@ -49,6 +50,7 @@ const formAppEntryValidation = (container) => {
     form.classList.add("form-app-container__body--validation-form");
     form.autocomplete = "off";
     container.appendChild(form);
+    container.style.justifyContent = "center";
 
     const label = document.createElement("label");
     label.innerHTML = "Enter Password:";

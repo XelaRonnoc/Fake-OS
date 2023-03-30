@@ -6,7 +6,7 @@ export const fillImageApp = (container) => {
     container.appendChild(gridHolder);
     for (let i = 0; i < 9; i++) {
         const image = document.createElement("img");
-        image.src = "http://placekitten.com/g/200/300";
+        image.src = "http://placekitten.com/g/200/200";
         gridHolder.appendChild(image);
     }
 };

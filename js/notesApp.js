@@ -15,7 +15,9 @@ export const fillNotesApp = (container) => {
     } else {
         for (let i = 0; i < savedElements.length; i++) {
             const header = document.createElement("h1");
-            const headerText = document.createTextNode(savedElements[i][0]);
+            const headerText = document.createTextNode(
+                savedElements[i][0] + ":"
+            );
             header.appendChild(headerText);
             container.appendChild(header);
 

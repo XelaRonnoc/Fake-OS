@@ -31,9 +31,9 @@
     &__body {
         display: flex;
         flex-direction: column;
-        justify-content: center;
 
         &--form {
+            justify-self: flex-start;
             display: flex;
             flex-direction: column;
 
