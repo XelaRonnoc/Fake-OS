@@ -16,14 +16,12 @@ export const addIconToFooter = (app) => {
     switch (app) {
         case "formApp":
             iconToAdd.classList.add("form-app");
-            image.src =
-                "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/chrome/chrome-original.svg";
+            image.src = "https://img.icons8.com/nolan/64/reminders.png";
             break;
 
         case "imageApp":
             iconToAdd.classList.add("image-app");
-            image.src =
-                "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/unrealengine/unrealengine-original.svg";
+            image.src = "https://img.icons8.com/nolan/64/pictures-folder.png";
 
             break;
 
@@ -79,8 +77,6 @@ export const makeAppBase = (classList, bodyTag) => {
     const minimiseContainer = document.createElement("div");
     minimiseContainer.classList.add("app-head__controls--minimise");
     newAppControls.appendChild(minimiseContainer);
-    // const minimiseSym = document.createTextNode("_");
-    // minimiseContainer.appendChild(minimiseSym);
     const minimiseSym = document.createElement("i");
     minimiseSym.classList.add("fa-solid");
     minimiseSym.classList.add("fa-window-minimize");
@@ -123,7 +119,8 @@ export const makeAppBase = (classList, bodyTag) => {
             appContainer,
             newAppBody,
             newAppHead,
-            newAppControls
+            newAppControls,
+            newAppTitle
         );
     }
 };
