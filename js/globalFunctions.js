@@ -25,8 +25,7 @@ export const addIconToFooter = (app) => {
 
         case "notesApp":
             iconToAdd.classList.add("notes-app");
-            image.src =
-                "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/stylus/stylus-original.svg";
+            image.src = "./images/Notepad_Icon_48.png";
             break;
     }
 };
@@ -45,4 +44,13 @@ export const removeItemFromFooter = (classString) => {
             openIconContainer.removeChild(item);
         }
     });
+};
+
+export const exitApp = (container, classString) => {
+    return function () {
+        const bodyTag = document.getElementsByTagName("body")[0];
+        console.log("exit");
+        bodyTag.removeChild(container);
+        removeItemFromFooter(classString);
+    };
 };

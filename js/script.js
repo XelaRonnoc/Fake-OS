@@ -1,7 +1,7 @@
 import { initialiseDateTime } from "./dateTime.js";
-import { notesApp } from "./notesApp.js";
-import { imageApp } from "./imageApp.js";
-import { formApp, savedElements } from "./formApp.js";
+import { makeNotesApp } from "./notesApp.js";
+import { makeImageApp } from "./imageApp.js";
+import { makeFormApp, savedElements } from "./formApp.js";
 import { removeItemFromFooter } from "./globalFunctions.js";
 
 const menuButton = document.getElementById("menuButton");
@@ -18,53 +18,56 @@ menuButton.addEventListener("click", (e) => {
 });
 
 // refactor so can be moved to global functions
-const exitApp = (container, classString) => {
-    return function () {
-        console.log("exit");
-        bodyTag.removeChild(container);
-        removeItemFromFooter(classString);
-    };
-};
 
 // refactor so can be moved to global functions
-const makeAppBase = (list) => {
+// const makeAppBase = (list) => {
+//     const classString = list.value;
+//     console.log(classString);
+//     const appContainer = document.createElement("div");
+//     appContainer.classList.add("app-container");
+//     bodyTag.appendChild(appContainer);
+
+//     const newAppBody = document.createElement("div");
+//     newAppBody.classList.add("app-body");
+//     appContainer.appendChild(newAppBody);
+
+//     const newAppHead = document.createElement("div");
+//     newAppHead.classList.add("app-head");
+//     appContainer.appendChild(newAppHead);
+//     const newAppControls = document.createElement("div");
+//     newAppControls.classList.add("app-head__controls");
+//     newAppHead.appendChild(newAppControls);
+//     const exitContainer = document.createElement("p");
+//     exitContainer.classList.add("app-head__controls--exit");
+//     newAppControls.appendChild(exitContainer);
+//     const exitSym = document.createTextNode("x");
+//     exitContainer.appendChild(exitSym);
+
+//     exitContainer.addEventListener("click", exitApp(appContainer, classString));
+
+//     if (classString.includes("form-app")) {
+//         formApp(newAppBody);
+//     } else if (classString.includes("notes-app")) {
+//         notesApp(newAppBody, savedElements);
+//     } else if (classString.includes("image-app")) {
+//         imageApp(newAppBody);
+//     }
+// };
+const makeAppBase = (list, bodyTag) => {
     const classString = list.value;
-    console.log(classString);
-    const appContainer = document.createElement("div");
-    appContainer.classList.add("app-container");
-    bodyTag.appendChild(appContainer);
-
-    const newAppBody = document.createElement("div");
-    newAppBody.classList.add("app-body");
-    appContainer.appendChild(newAppBody);
-
-    const newAppHead = document.createElement("div");
-    newAppHead.classList.add("app-head");
-    appContainer.appendChild(newAppHead);
-    const newAppControls = document.createElement("div");
-    newAppControls.classList.add("app-head__controls");
-    newAppHead.appendChild(newAppControls);
-    const exitContainer = document.createElement("p");
-    exitContainer.classList.add("app-head__controls--exit");
-    newAppControls.appendChild(exitContainer);
-    const exitSym = document.createTextNode("X");
-    exitContainer.appendChild(exitSym);
-
-    exitContainer.addEventListener("click", exitApp(appContainer, classString));
-
-    if (classString.includes("form-app")) {
-        formApp(newAppBody);
-    } else if (classString.includes("notes-app")) {
-        notesApp(newAppBody, savedElements);
+    if (classString.includes("notes-app")) {
+        makeNotesApp(classString, savedElements, bodyTag);
+    } else if (classString.includes("form-app")) {
+        makeFormApp(classString, bodyTag);
     } else if (classString.includes("image-app")) {
-        imageApp(newAppBody);
+        makeImageApp(classString, bodyTag);
     }
 };
 
 // adds an event listner to each icon in appShortcuts Array
 for (let i = 0; i < appShortcuts.length; i++) {
     appShortcuts[i].addEventListener("click", (e) => {
-        makeAppBase(e.target.classList);
+        makeAppBase(e.target.classList, bodyTag);
         console.log("app Opened");
     });
 }
@@ -74,10 +77,5 @@ document.getElementsByTagName("body")[0].addEventListener("click", (e) => {
     e.stopPropagation();
     menuPopUp.classList.add("foot-container__menu--hide");
 });
-
-//updates the time/date on clock in footer
-// setInterval(function () {
-//     updateDateTime(dateTimeContatiner);
-// }, 1000);
 
 initialiseDateTime(timeHolder, dateHolder);
