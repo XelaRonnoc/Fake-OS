@@ -29,7 +29,7 @@ export const addIconToFooter = (app) => {
 
         case "notesApp":
             iconToAdd.classList.add("notes-app");
-            image.src = "./images/Notepad_Icon_48.png";
+            image.src = "https://img.icons8.com/nolan/64/windows-notepad.png";
             break;
     }
 };
@@ -68,13 +68,20 @@ export const makeAppBase = (classList, bodyTag) => {
     newAppHead.classList.add("app-head");
     appContainer.appendChild(newAppHead);
 
+    const newAppTitle = document.createElement("div");
+    newAppTitle.classList.add("app-head__title");
+    newAppHead.appendChild(newAppTitle);
+
     const newAppControls = document.createElement("div");
     newAppControls.classList.add("app-head__controls");
     newAppHead.appendChild(newAppControls);
     const exitContainer = document.createElement("p");
     exitContainer.classList.add("app-head__controls--exit");
     newAppControls.appendChild(exitContainer);
-    const exitSym = document.createTextNode("x");
+    const exitSym = document.createElement("i");
+    exitSym.classList.add("fa-solid");
+    exitSym.classList.add("fa-xmark");
+
     exitContainer.appendChild(exitSym);
 
     const newAppBody = document.createElement("div");
@@ -84,7 +91,13 @@ export const makeAppBase = (classList, bodyTag) => {
     const classString = classList.value;
     exitContainer.addEventListener("click", exitApp(appContainer, classString));
     if (classString.includes("notes-app")) {
-        addNotesClasses(appContainer, newAppBody, newAppHead, newAppControls);
+        addNotesClasses(
+            appContainer,
+            newAppBody,
+            newAppHead,
+            newAppControls,
+            newAppTitle
+        );
     } else if (classString.includes("form-app")) {
         addFormAppClasses(appContainer, newAppBody, newAppHead, newAppControls);
     } else if (classString.includes("image-app")) {

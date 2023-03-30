@@ -21,12 +21,22 @@ export const addNotesClasses = (
     appContainer,
     newAppBody,
     newAppHead,
-    newAppControls
+    newAppControls,
+    newAppTitle
 ) => {
     appContainer.classList.add("notes-app-container");
     newAppBody.classList.add("notes-app-container__body");
     newAppHead.classList.add("notes-app-container__head");
     newAppControls.classList.add("notes-app-container__head--controls");
+    newAppTitle.classList.add("notes-app-container__head--title");
+    const titleImage = document.createElement("img");
+    titleImage.src = "https://img.icons8.com/nolan/64/windows-notepad.png";
+    newAppTitle.appendChild(titleImage);
+    const titleTextContainer = document.createElement("h2");
+    const titleText = document.createTextNode("Untitled - Notepad");
+    titleTextContainer.appendChild(titleText);
+    newAppTitle.appendChild(titleTextContainer);
+
     addIconToFooter("notesApp");
     fillNotesApp(newAppBody);
 };
