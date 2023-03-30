@@ -35,8 +35,9 @@
         gap: 2px;
 
         &--exit {
+            height: 100%;
             width: 33%;
-            padding: 2px;
+            padding: 0px;
             margin: 0;
             color: darkgray;
             text-align: center;
@@ -44,7 +45,7 @@
 
             & > i {
                 position: relative;
-                bottom: 0px;
+                bottom: -2px;
             }
 
             &:hover {
@@ -53,8 +54,8 @@
         }
 
         &--expand {
+            height: 100%;
             width: 33%;
-            padding: 3px;
             margin: 0;
             color: darkgray;
             text-align: center;
@@ -62,7 +63,7 @@
 
             & > i {
                 position: relative;
-                bottom: 0px;
+                bottom: -2px;
             }
 
             &:hover {
@@ -71,8 +72,9 @@
         }
 
         &--minimise {
+            height: 100%;
             width: 33%;
-            padding: 3px;
+
             color: darkgray;
             justify-content: center;
             text-align: center;
@@ -80,7 +82,7 @@
 
             & > i {
                 position: relative;
-                bottom: 5px;
+                bottom: 3px;
             }
 
             &:hover {

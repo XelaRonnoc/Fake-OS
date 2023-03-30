@@ -113,7 +113,13 @@ export const makeAppBase = (classList, bodyTag) => {
             newAppTitle
         );
     } else if (classString.includes("form-app")) {
-        addFormAppClasses(appContainer, newAppBody, newAppHead, newAppControls);
+        addFormAppClasses(
+            appContainer,
+            newAppBody,
+            newAppHead,
+            newAppControls,
+            newAppTitle
+        );
     } else if (classString.includes("image-app")) {
         addImageAppClasses(
             appContainer,
