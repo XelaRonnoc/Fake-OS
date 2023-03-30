@@ -75,13 +75,31 @@ export const makeAppBase = (classList, bodyTag) => {
     const newAppControls = document.createElement("div");
     newAppControls.classList.add("app-head__controls");
     newAppHead.appendChild(newAppControls);
-    const exitContainer = document.createElement("p");
+
+    const minimiseContainer = document.createElement("div");
+    minimiseContainer.classList.add("app-head__controls--minimise");
+    newAppControls.appendChild(minimiseContainer);
+    // const minimiseSym = document.createTextNode("_");
+    // minimiseContainer.appendChild(minimiseSym);
+    const minimiseSym = document.createElement("i");
+    minimiseSym.classList.add("fa-solid");
+    minimiseSym.classList.add("fa-window-minimize");
+    minimiseContainer.appendChild(minimiseSym);
+
+    const expandContainer = document.createElement("div");
+    expandContainer.classList.add("app-head__controls--expand");
+    newAppControls.appendChild(expandContainer);
+    const expandSym = document.createElement("i");
+    expandSym.classList.add("fa-regular");
+    expandSym.classList.add("fa-square");
+    expandContainer.appendChild(expandSym);
+
+    const exitContainer = document.createElement("div");
     exitContainer.classList.add("app-head__controls--exit");
     newAppControls.appendChild(exitContainer);
     const exitSym = document.createElement("i");
     exitSym.classList.add("fa-solid");
     exitSym.classList.add("fa-xmark");
-
     exitContainer.appendChild(exitSym);
 
     const newAppBody = document.createElement("div");

@@ -1,3 +1,5 @@
+@use "pallette";
+
 .app-container {
     height: 1000px;
     width: 1000px;
@@ -23,20 +25,56 @@
     background-color: blueviolet;
 
     &__controls {
-        text-align: center;
-        background-color: red;
-        width: 5%;
-        height: 100%;
-        font-size: 36px;
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 15%;
+        height: 50%;
 
-        &:hover {
-            background-color: darkred;
-        }
+        gap: 2px;
 
         &--exit {
-            padding: 0;
-            margin: 10% 0;
-            align-self: cen;
+            width: 33%;
+            padding: 1px;
+            margin: 0;
+            color: darkgray;
+            text-align: center;
+            font-size: large;
+
+            &:hover {
+                background-color: red;
+            }
+        }
+
+        &--expand {
+            width: 33%;
+            padding: 3px;
+            margin: 0;
+            color: darkgray;
+            text-align: center;
+            font-size: medium;
+            &:hover {
+                background-color: lightgray;
+            }
+        }
+
+        &--minimise {
+            width: 33%;
+            padding: 3px;
+            color: darkgray;
+            justify-content: center;
+            text-align: center;
+            font-size: medium;
+
+            & > i {
+                position: relative;
+                bottom: 5px;
+            }
+
+            &:hover {
+                background-color: lightgray;
+            }
         }
     }
 }

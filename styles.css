@@ -188,19 +188,50 @@
   background-color: blueviolet;
 }
 .app-head__controls {
-  text-align: center;
-  background-color: red;
-  width: 5%;
-  height: 100%;
-  font-size: 36px;
-}
-.app-head__controls:hover {
-  background-color: darkred;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 15%;
+  height: 50%;
+  gap: 2px;
 }
 .app-head__controls--exit {
-  padding: 0;
-  margin: 10% 0;
-  align-self: cen;
+  width: 33%;
+  padding: 1px;
+  margin: 0;
+  color: darkgray;
+  text-align: center;
+  font-size: large;
+}
+.app-head__controls--exit:hover {
+  background-color: red;
+}
+.app-head__controls--expand {
+  width: 33%;
+  padding: 3px;
+  margin: 0;
+  color: darkgray;
+  text-align: center;
+  font-size: medium;
+}
+.app-head__controls--expand:hover {
+  background-color: lightgray;
+}
+.app-head__controls--minimise {
+  width: 33%;
+  padding: 3px;
+  color: darkgray;
+  justify-content: center;
+  text-align: center;
+  font-size: medium;
+}
+.app-head__controls--minimise > i {
+  position: relative;
+  bottom: 5px;
+}
+.app-head__controls--minimise:hover {
+  background-color: lightgray;
 }
 
 .form-container {
