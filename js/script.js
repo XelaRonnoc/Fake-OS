@@ -1,4 +1,4 @@
-import { updateDateTime } from "./dateTime.js";
+import { initialiseDateTime } from "./dateTime.js";
 import { notesApp } from "./notesApp.js";
 import { imageApp } from "./imageApp.js";
 import { formApp, savedElements } from "./formApp.js";
@@ -8,9 +8,9 @@ const menuButton = document.getElementById("menuButton");
 const menuPopUp = document.getElementById("menuPopUp");
 const appShortcuts = document.getElementsByClassName("app-shortcut");
 const bodyTag = document.getElementsByTagName("body")[0];
-const dateTimeContatiner = document.getElementsByClassName(
-    "foot-container__time"
-)[0];
+
+const timeHolder = document.getElementById("time");
+const dateHolder = document.getElementById("date");
 
 menuButton.addEventListener("click", (e) => {
     menuPopUp.classList.toggle("foot-container__menu--hide");
@@ -80,4 +80,4 @@ document.getElementsByTagName("body")[0].addEventListener("click", (e) => {
 //     updateDateTime(dateTimeContatiner);
 // }, 1000);
 
-updateDateTime(dateTimeContatiner);
+initialiseDateTime(timeHolder, dateHolder);
