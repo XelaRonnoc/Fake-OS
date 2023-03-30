@@ -1,4 +1,4 @@
-import { addIconToFooter, exitApp } from "./globalFunctions.js";
+import { addIconToFooter } from "./globalFunctions.js";
 
 export const savedElements = [];
 
@@ -38,32 +38,16 @@ export const fillFormApp = (container) => {
     });
 };
 
-export const makeFormApp = (classString, bodyTag) => {
-    const appContainer = document.createElement("div");
-    appContainer.classList.add("app-container");
+export const addFormAppClasses = (
+    appContainer,
+    newAppBody,
+    newAppHead,
+    newAppControls
+) => {
     appContainer.classList.add("form-app-container");
-    bodyTag.appendChild(appContainer);
-
-    const newAppBody = document.createElement("div");
-    newAppBody.classList.add("app-body");
     newAppBody.classList.add("form-app-container__body");
-    appContainer.appendChild(newAppBody);
-
-    const newAppHead = document.createElement("div");
-    newAppHead.classList.add("app-head");
     newAppHead.classList.add("form-app-container__head");
-    appContainer.appendChild(newAppHead);
-    const newAppControls = document.createElement("div");
-    newAppControls.classList.add("app-head__controls");
     newAppControls.classList.add("form-app-container__head--controls");
-    newAppHead.appendChild(newAppControls);
-    const exitContainer = document.createElement("p");
-    exitContainer.classList.add("app-head__controls--exit");
-    newAppControls.appendChild(exitContainer);
-    const exitSym = document.createTextNode("x");
-    exitContainer.appendChild(exitSym);
-
     addIconToFooter("formApp");
     fillFormApp(newAppBody);
-    exitContainer.addEventListener("click", exitApp(appContainer, classString));
 };

@@ -1,3 +1,7 @@
+import { addImageAppClasses } from "./imageApp.js";
+import { addNotesClasses } from "./notesApp.js";
+import { addFormAppClasses } from "./formApp.js";
+
 const openIconContainer = document.getElementsByClassName(
     "foot-container__icons"
 )[0];
@@ -53,4 +57,42 @@ export const exitApp = (container, classString) => {
         bodyTag.removeChild(container);
         removeItemFromFooter(classString);
     };
+};
+
+export const makeAppBase = (classList, bodyTag) => {
+    const appContainer = document.createElement("div");
+    appContainer.classList.add("app-container");
+    bodyTag.appendChild(appContainer);
+
+    const newAppHead = document.createElement("div");
+    newAppHead.classList.add("app-head");
+    appContainer.appendChild(newAppHead);
+
+    const newAppControls = document.createElement("div");
+    newAppControls.classList.add("app-head__controls");
+    newAppHead.appendChild(newAppControls);
+    const exitContainer = document.createElement("p");
+    exitContainer.classList.add("app-head__controls--exit");
+    newAppControls.appendChild(exitContainer);
+    const exitSym = document.createTextNode("x");
+    exitContainer.appendChild(exitSym);
+
+    const newAppBody = document.createElement("div");
+    newAppBody.classList.add("app-body");
+    appContainer.appendChild(newAppBody);
+
+    const classString = classList.value;
+    exitContainer.addEventListener("click", exitApp(appContainer, classString));
+    if (classString.includes("notes-app")) {
+        addNotesClasses(appContainer, newAppBody, newAppHead, newAppControls);
+    } else if (classString.includes("form-app")) {
+        addFormAppClasses(appContainer, newAppBody, newAppHead, newAppControls);
+    } else if (classString.includes("image-app")) {
+        addImageAppClasses(
+            appContainer,
+            newAppBody,
+            newAppHead,
+            newAppControls
+        );
+    }
 };

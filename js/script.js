@@ -1,8 +1,5 @@
 import { initialiseDateTime } from "./dateTime.js";
-import { makeNotesApp } from "./notesApp.js";
-import { makeImageApp } from "./imageApp.js";
-import { makeFormApp, savedElements } from "./formApp.js";
-import { removeItemFromFooter } from "./globalFunctions.js";
+import { removeItemFromFooter, makeAppBase } from "./globalFunctions.js";
 
 const menuButton = document.getElementById("menuButton");
 const menuPopUp = document.getElementById("menuPopUp");
@@ -53,16 +50,16 @@ menuButton.addEventListener("click", (e) => {
 //         imageApp(newAppBody);
 //     }
 // };
-const makeAppBase = (list, bodyTag) => {
-    const classString = list.value;
-    if (classString.includes("notes-app")) {
-        makeNotesApp(classString, savedElements, bodyTag);
-    } else if (classString.includes("form-app")) {
-        makeFormApp(classString, bodyTag);
-    } else if (classString.includes("image-app")) {
-        makeImageApp(classString, bodyTag);
-    }
-};
+// const makeAppBase = (list, bodyTag) => {
+//     const classString = list.value;
+//     if (classString.includes("notes-app")) {
+//         makeNotesApp(classString, savedElements, bodyTag);
+//     } else if (classString.includes("form-app")) {
+//         makeFormApp(classString, bodyTag);
+//     } else if (classString.includes("image-app")) {
+//         makeImageApp(classString, bodyTag);
+//     }
+// };
 
 // adds an event listner to each icon in appShortcuts Array
 for (let i = 0; i < appShortcuts.length; i++) {

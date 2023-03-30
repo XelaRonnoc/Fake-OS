@@ -1,0 +1,10 @@
+@use "pallette";
+
+.notes-app-container {
+    border: 1px solid rgba($color: #2b2a2a, $alpha: 1);
+
+    &__head {
+        border-bottom: 1px solid lightgray;
+        background-color: white;
+    }
+}
