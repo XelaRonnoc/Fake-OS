@@ -34,6 +34,10 @@ export const addIconToFooter = (app) => {
     iconToAdd.addEventListener("click", (e) => {
         const appClass = `${app}-container`;
         const appsOfClass = document.getElementsByClassName(appClass);
+        const allAppsOpen = document.getElementsByClassName("app-container");
+        for (let i = 0; i < allAppsOpen.length; i++) {
+            allAppsOpen[i].classList.add("hide");
+        }
         appsOfClass[0].classList.remove("hide");
     });
 };
@@ -149,10 +153,14 @@ export const makeAppBase = (classList, bodyTag) => {
 };
 
 export const openApp = (classList, bodyTag) => {
+    const allAppsOpen = document.getElementsByClassName("app-container");
     const appClass = classList[classList.length - 1];
     const appsOfClass = document.getElementsByClassName(
         `${appClass}-container`
     );
+    for (let i = 0; i < allAppsOpen.length; i++) {
+        allAppsOpen[i].classList.add("hide");
+    }
     if (appsOfClass.length === 0) {
         makeAppBase(classList, bodyTag);
     } else {
