@@ -389,6 +389,24 @@
   margin: 0;
   padding: 3px;
 }
+.notes-app-container__body {
+  display: flex;
+  flex-direction: column;
+}
+.notes-app-container__body > div {
+  margin: 10px 20px;
+  border-radius: 12px;
+  background-color: whitesmoke;
+}
+.notes-app-container__body > div > h1 {
+  margin: 5px 5px 10px 5px;
+  text-decoration: underline;
+  color: skyblue;
+}
+.notes-app-container__body > div > p {
+  margin: 5px;
+  color: gray;
+}
 
 body {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;

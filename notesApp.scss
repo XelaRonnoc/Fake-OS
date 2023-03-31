@@ -27,4 +27,26 @@
             }
         }
     }
+
+    &__body {
+        display: flex;
+        flex-direction: column;
+
+        & > div {
+            margin: 10px 20px;
+            border-radius: 12px;
+            background-color: whitesmoke;
+
+            & > h1 {
+                margin: 5px 5px 10px 5px;
+                text-decoration: underline;
+                color: skyblue;
+            }
+
+            & > p {
+                margin: 5px;
+                color: gray;
+            }
+        }
+    }
 }

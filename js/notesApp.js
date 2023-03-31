@@ -14,17 +14,18 @@ export const fillNotesApp = (container) => {
         container.appendChild(placeHolder);
     } else {
         for (let i = 0; i < savedElements.length; i++) {
+            const log = document.createElement("div");
             const header = document.createElement("h1");
-            const headerText = document.createTextNode(
-                savedElements[i][0] + ":"
-            );
+            const headerText = document.createTextNode(savedElements[i][0]);
             header.appendChild(headerText);
-            container.appendChild(header);
 
             const para = document.createElement("p");
             const paraText = document.createTextNode(savedElements[i][1]);
             para.appendChild(paraText);
-            container.appendChild(para);
+
+            log.appendChild(header);
+            log.appendChild(para);
+            container.appendChild(log);
         }
     }
 };
