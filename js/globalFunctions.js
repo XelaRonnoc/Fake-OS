@@ -14,22 +14,28 @@ export const addIconToFooter = (app) => {
     iconToAdd.appendChild(image);
     openIconContainer.appendChild(iconToAdd);
     switch (app) {
-        case "formApp":
+        case "form-app":
             iconToAdd.classList.add("form-app");
             image.src = "https://img.icons8.com/nolan/64/reminders.png";
             break;
 
-        case "imageApp":
+        case "image-app":
             iconToAdd.classList.add("image-app");
             image.src = "https://img.icons8.com/nolan/64/pictures-folder.png";
 
             break;
 
-        case "notesApp":
+        case "notes-app":
             iconToAdd.classList.add("notes-app");
             image.src = "https://img.icons8.com/nolan/64/windows-notepad.png";
             break;
     }
+
+    iconToAdd.addEventListener("click", (e) => {
+        const appClass = `${app}-container`;
+        const appsOfClass = document.getElementsByClassName(appClass);
+        appsOfClass[0].classList.remove("hide");
+    });
 };
 
 //removes corresponding icon from footer when app closes
@@ -54,6 +60,13 @@ export const exitApp = (container, classString) => {
         console.log("exit");
         bodyTag.removeChild(container);
         removeItemFromFooter(classString);
+    };
+};
+
+export const minimiseApp = (container) => {
+    return function () {
+        container.classList.add("hide");
+        console.log("minimise");
     };
 };
 
@@ -104,6 +117,7 @@ export const makeAppBase = (classList, bodyTag) => {
 
     const classString = classList.value;
     exitContainer.addEventListener("click", exitApp(appContainer, classString));
+    minimiseContainer.addEventListener("click", minimiseApp(appContainer));
     if (classString.includes("notes-app")) {
         addNotesClasses(
             appContainer,
@@ -112,6 +126,7 @@ export const makeAppBase = (classList, bodyTag) => {
             newAppControls,
             newAppTitle
         );
+        addIconToFooter("notes-app");
     } else if (classString.includes("form-app")) {
         addFormAppClasses(
             appContainer,
@@ -120,6 +135,7 @@ export const makeAppBase = (classList, bodyTag) => {
             newAppControls,
             newAppTitle
         );
+        addIconToFooter("form-app");
     } else if (classString.includes("image-app")) {
         addImageAppClasses(
             appContainer,
@@ -128,5 +144,18 @@ export const makeAppBase = (classList, bodyTag) => {
             newAppControls,
             newAppTitle
         );
+        addIconToFooter("image-app");
+    }
+};
+
+export const openApp = (classList, bodyTag) => {
+    const appClass = classList[classList.length - 1];
+    const appsOfClass = document.getElementsByClassName(
+        `${appClass}-container`
+    );
+    if (appsOfClass.length === 0) {
+        makeAppBase(classList, bodyTag);
+    } else {
+        appsOfClass[0].classList.remove("hide");
     }
 };

@@ -30,6 +30,6 @@ export const addImageAppClasses = (
     const titleText = document.createTextNode("Photos");
     titleTextContainer.appendChild(titleText);
     newAppTitle.appendChild(titleTextContainer);
-    addIconToFooter("imageApp");
+
     fillImageApp(newAppBody);
 };

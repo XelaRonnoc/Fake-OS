@@ -104,6 +104,6 @@ export const addFormAppClasses = (
     const titleText = document.createTextNode("Reminders");
     titleTextContainer.appendChild(titleText);
     newAppTitle.appendChild(titleTextContainer);
-    addIconToFooter("formApp");
+
     formAppEntryValidation(newAppBody);
 };

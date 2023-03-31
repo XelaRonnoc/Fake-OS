@@ -1,5 +1,9 @@
 import { initialiseDateTime } from "./dateTime.js";
-import { removeItemFromFooter, makeAppBase } from "./globalFunctions.js";
+import {
+    removeItemFromFooter,
+    makeAppBase,
+    openApp,
+} from "./globalFunctions.js";
 
 const menuButton = document.getElementById("menuButton");
 const menuPopUp = document.getElementById("menuPopUp");
@@ -64,7 +68,7 @@ menuButton.addEventListener("click", (e) => {
 // adds an event listner to each icon in appShortcuts Array
 for (let i = 0; i < appShortcuts.length; i++) {
     appShortcuts[i].addEventListener("click", (e) => {
-        makeAppBase(e.target.classList, bodyTag);
+        openApp(e.target.classList, bodyTag);
         console.log("app Opened");
     });
 }

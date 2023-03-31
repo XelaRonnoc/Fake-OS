@@ -49,6 +49,5 @@ export const addNotesClasses = (
     titleTextContainer.appendChild(titleText);
     newAppTitle.appendChild(titleTextContainer);
 
-    addIconToFooter("notesApp");
     fillNotesApp(newAppBody);
 };
