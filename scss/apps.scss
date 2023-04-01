@@ -1,0 +1,99 @@
+@use "pallette";
+
+.app-container {
+    height: 80vh;
+    width: 1000px;
+    align-self: center;
+    justify-self: center;
+    position: relative;
+    right: 10vw;
+    display: flex;
+    flex-direction: column;
+}
+
+.app-body {
+    width: 100%;
+    height: 100%;
+    background-color: white;
+}
+
+.app-head {
+    display: flex;
+    justify-content: space-between;
+    height: 50px;
+    border-bottom: 1px solid lightgray;
+    background-color: blueviolet;
+
+    &__controls {
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 15%;
+        height: 50%;
+
+        gap: 2px;
+
+        &--exit {
+            height: 100%;
+            width: 33%;
+            padding: 0px;
+            margin: 0;
+            color: darkgray;
+            text-align: center;
+            font-size: large;
+
+            & > i {
+                position: relative;
+                bottom: -2px;
+            }
+
+            &:hover {
+                background-color: red;
+            }
+        }
+
+        &--expand {
+            height: 100%;
+            width: 33%;
+            margin: 0;
+            color: darkgray;
+            text-align: center;
+            font-size: medium;
+
+            & > i {
+                position: relative;
+                bottom: -2px;
+            }
+
+            &:hover {
+                background-color: lightgray;
+            }
+        }
+
+        &--minimise {
+            height: 100%;
+            width: 33%;
+
+            color: darkgray;
+            justify-content: center;
+            text-align: center;
+            font-size: medium;
+
+            & > i {
+                position: relative;
+                bottom: 3px;
+            }
+
+            &:hover {
+                background-color: lightgray;
+            }
+        }
+    }
+}
+
+.hide {
+    display: none;
+    opacity: 0;
+    visibility: hidden;
+}

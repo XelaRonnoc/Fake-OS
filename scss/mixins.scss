@@ -1,0 +1,14 @@
+@use "pallette";
+%right-bar-mini-icon-style {
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    color: aliceblue;
+    font-size: 12px;
+    padding: 0 5px;
+
+    &:hover {
+        background-color: pallette.$footerBarHighlight;
+    }
+}
