@@ -22,7 +22,7 @@ export const addImageAppClasses = (
     newAppBody.classList.add("image-app-container__body");
     newAppHead.classList.add("image-app-container__head");
     newAppControls.classList.add("image-app-container__head--controls");
-    newAppTitle.classList.add("notes-app-container__head--title");
+    newAppTitle.classList.add("image-app-container__head--title");
 
     const titleTextContainer = makeElement(newAppTitle, "", "h2");
     titleTextContainer.innerHTML = "Photos";

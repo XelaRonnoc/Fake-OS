@@ -6,12 +6,12 @@
 
     &__head {
         height: 50px;
-        border-bottom: 1px solid lightgray;
-        background-color: whitesmoke;
+        border-bottom: 1px solid pallette.$controlHoverBackgroundColor;
+        background-color: pallette.$appInternalDivColor;
 
         &--title {
             display: flex;
-            color: gray;
+            color: pallette.$appControlIconColor;
 
             & img {
                 padding: 3px;
@@ -35,7 +35,7 @@
         & > div {
             margin: 10px 20px;
             border-radius: 12px;
-            background-color: whitesmoke;
+            background-color: pallette.$appInternalDivColor;
 
             & > h1 {
                 margin: 5px 5px 10px 5px;
@@ -45,7 +45,7 @@
 
             & > p {
                 margin: 5px;
-                color: gray;
+                color: pallette.$appControlIconColor;
             }
         }
     }

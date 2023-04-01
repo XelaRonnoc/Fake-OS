@@ -21,7 +21,7 @@
     display: flex;
     justify-content: space-between;
     height: 50px;
-    border-bottom: 1px solid lightgray;
+    border-bottom: 1px solid pallette.$controlHoverBackgroundColor;
     background-color: blueviolet;
 
     &__controls {
@@ -39,7 +39,7 @@
             width: 33%;
             padding: 0px;
             margin: 0;
-            color: darkgray;
+            color: pallette.$appControlIconColor;
             text-align: center;
             font-size: large;
 
@@ -57,7 +57,7 @@
             height: 100%;
             width: 33%;
             margin: 0;
-            color: darkgray;
+            color: pallette.$appControlIconColor;
             text-align: center;
             font-size: medium;
 
@@ -67,7 +67,7 @@
             }
 
             &:hover {
-                background-color: lightgray;
+                background-color: pallette.$controlHoverBackgroundColor;
             }
         }
 
@@ -75,7 +75,7 @@
             height: 100%;
             width: 33%;
 
-            color: darkgray;
+            color: pallette.$appControlIconColor;
             justify-content: center;
             text-align: center;
             font-size: medium;
@@ -86,7 +86,7 @@
             }
 
             &:hover {
-                background-color: lightgray;
+                background-color: pallette.$controlHoverBackgroundColor;
             }
         }
     }

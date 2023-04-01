@@ -43,7 +43,7 @@ body {
     &__name {
         margin: 0;
         font-size: small;
-        color: white;
+        color: pallette.$generalTextColor;
     }
 
     &:hover {

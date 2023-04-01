@@ -6,12 +6,12 @@
 
     &__head {
         height: 50px;
-        border-bottom: 1px solid lightgray;
+        border-bottom: 1px solid pallette.$controlHoverBackgroundColor;
         background-color: pallette.$footerBarColor;
 
         &--title {
             display: flex;
-            color: gray;
+            color: pallette.$appControlIconColor;
 
             & img {
                 padding: 3px;
@@ -26,6 +26,18 @@
                 padding: 3px;
             }
         }
+        &--controls {
+            & div:first-of-type {
+                &:hover {
+                    background-color: pallette.$footerBarHighlight;
+                }
+            }
+            & div:nth-of-type(2) {
+                &:hover {
+                    background-color: pallette.$footerBarHighlight;
+                }
+            }
+        }
     }
 
     &__body {
@@ -37,6 +49,14 @@
             display: grid;
             grid-template-columns: 1fr 1fr 1fr;
             gap: 20px;
+
+            & > img {
+                border-radius: 12px;
+
+                &:hover {
+                    box-shadow: 10px 10px 10px grey;
+                }
+            }
         }
     }
 }
