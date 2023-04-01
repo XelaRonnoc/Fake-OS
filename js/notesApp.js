@@ -69,7 +69,7 @@ export const addNotesClasses = (
     titleImage.src = "https://img.icons8.com/nolan/64/windows-notepad.png";
     newAppTitle.appendChild(titleImage);
     const titleTextContainer = document.createElement("h2");
-    const titleText = document.createTextNode("Untitled - Notepad");
+    const titleText = document.createTextNode("References - Notepad");
     titleTextContainer.appendChild(titleText);
     newAppTitle.appendChild(titleTextContainer);
 
