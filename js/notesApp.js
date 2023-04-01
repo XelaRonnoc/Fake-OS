@@ -1,5 +1,5 @@
-import { addIconToFooter, exitApp } from "./globalFunctions.js";
 import { savedElements } from "./formApp.js";
+import { makeElement } from "./globalFunctions.js";
 
 const referenceArray = [
     '<a target="_blank" href="https://icons8.com/icon/XTwDewtklGCW/reminders">Reminders icon by Icons8</a>',
@@ -21,35 +21,23 @@ const referenceArray = [
 
 export const fillNotesApp = (container) => {
     // creates a new header and para element for each index in saved elements array
-
-    const references = document.createElement("div");
-    const refHeader = document.createElement("h1");
-    const refHeaderText = document.createTextNode("References");
-    refHeader.appendChild(refHeaderText);
+    const references = makeElement(container, "reference-list", "div");
+    const refHeader = makeElement(references, "reference-header", "h1");
+    refHeader.innerHTML = "References";
 
     const refPara = document.createElement("ul");
     for (let i = 0; i < referenceArray.length; i++) {
         refPara.innerHTML += "<li>" + referenceArray[i];
         ("</li>");
     }
-    references.appendChild(refHeader);
     references.appendChild(refPara);
-    container.appendChild(references);
 
     for (let i = 0; i < savedElements.length; i++) {
-        const log = document.createElement("div");
-        const header = document.createElement("h1");
-        const headerText = document.createTextNode(savedElements[i][0]);
-        header.appendChild(headerText);
-
-        const para = document.createElement("p");
-        const paraText = document.createTextNode(savedElements[i][1]);
-        para.appendChild(paraText);
-
-        log.appendChild(header);
-        log.appendChild(para);
-        container.appendChild(log);
-        // }
+        const log = makeElement(container, "logs", "div");
+        const header = makeElement(log, "log-header", "h1");
+        header.innerHTML = savedElements[i][0];
+        const para = makeElement(log, "log-para", "p");
+        para.innerHTML = savedElements[i][1];
     }
 };
 
@@ -65,13 +53,12 @@ export const addNotesClasses = (
     newAppHead.classList.add("notes-app-container__head");
     newAppControls.classList.add("notes-app-container__head--controls");
     newAppTitle.classList.add("notes-app-container__head--title");
-    const titleImage = document.createElement("img");
+
+    const titleImage = makeElement(newAppTitle, "title-image", "img");
     titleImage.src = "https://img.icons8.com/nolan/64/windows-notepad.png";
-    newAppTitle.appendChild(titleImage);
-    const titleTextContainer = document.createElement("h2");
-    const titleText = document.createTextNode("References - Notepad");
-    titleTextContainer.appendChild(titleText);
-    newAppTitle.appendChild(titleTextContainer);
+
+    const titleTextContainer = makeElement(newAppTitle, "-title-text", "h2");
+    titleTextContainer.innerHTML = "References - Notepad";
 
     fillNotesApp(newAppBody);
 };

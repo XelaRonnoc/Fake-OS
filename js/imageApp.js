@@ -1,5 +1,3 @@
-import { addIconToFooter, exitApp } from "./globalFunctions.js";
-
 // adds image to image app
 export const fillImageApp = (container) => {
     const gridHolder = document.createElement("div");

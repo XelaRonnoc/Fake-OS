@@ -1,5 +1,3 @@
-import { addIconToFooter } from "./globalFunctions.js";
-
 export const savedElements = [];
 
 // saves what is entered in the form to the savedElements array
