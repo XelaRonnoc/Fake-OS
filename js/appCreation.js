@@ -46,12 +46,12 @@ export const makeAppBase = (classList, bodyTag) => {
 
     // add some event listeners
     exitContainer.addEventListener("click", (e) => {
-        e.stopPropagation();
         exitApp(appContainer, classString);
+        e.stopPropagation();
     });
     minimiseContainer.addEventListener("click", (e) => {
-        e.stopPropagation();
         minimiseApp(appContainer);
+        e.stopPropagation();
     });
 
     // select which app to complete further non-generic elements

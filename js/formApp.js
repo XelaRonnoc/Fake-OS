@@ -1,3 +1,5 @@
+import { makeElement } from "./globalFunctions.js";
+
 export const savedElements = [];
 
 // saves what is entered in the form to the savedElements array
@@ -10,28 +12,25 @@ const save = (header, bodyText) => {
 
 // creates a form object that allows for entering of header and paragraph that can be saved into the notes app
 export const fillFormApp = (container) => {
-    const form = document.createElement("form");
-    form.classList.add("form-app-container__body--form");
-    container.appendChild(form);
     container.style.justifyContent = "initial";
+    const form = makeElement(
+        container,
+        "form-app-container__body--form",
+        "form"
+    );
 
-    const headerInput = document.createElement("input");
+    const headerInput = makeElement(form, "", "input");
     headerInput.type = "text";
     headerInput.placeholder = "Reminder Title";
-    form.appendChild(headerInput);
 
-    const entryInput = document.createElement("textarea");
+    const entryInput = makeElement(form, "", "textarea");
     entryInput.rows = 20; // 58 = full at 1000px
     entryInput.placeholder = "Write Reminder text here";
-    form.appendChild(entryInput);
-    const saveBtn = document.createElement("button");
-    const btnText = document.createTextNode("Save");
-    saveBtn.appendChild(btnText);
-    saveBtn.value = "save";
 
-    form.appendChild(saveBtn);
-    saveBtn.addEventListener("click", (e) => {
-        // change this to submit instead of click
+    const saveBtn = makeElement(form, "", "input");
+    saveBtn.type = "submit";
+    saveBtn.value = "save";
+    form.addEventListener("submit", (e) => {
         save(headerInput.value, entryInput.value);
         e.preventDefault();
         e.stopPropagation();
@@ -44,32 +43,29 @@ const validate = (password) => {
 };
 
 const formAppEntryValidation = (container) => {
-    const form = document.createElement("form");
-    form.classList.add("form-app-container__body--validation-form");
-    form.autocomplete = "off";
-    container.appendChild(form);
     container.style.justifyContent = "center";
+    const form = makeElement(
+        container,
+        "form-app-container__body--validation-form",
+        "form"
+    );
+    form.autocomplete = "off";
 
-    const label = document.createElement("label");
+    const label = makeElement(form, "", "label");
     label.innerHTML = "Enter Password:";
     label.setAttribute("for", "passwordInput");
-    form.appendChild(label);
-    const passInput = document.createElement("input");
+
+    const passInput = makeElement(form, "", "input");
     passInput.id = "passwordInput";
     passInput.type = "password";
     passInput.placeholder = "Password";
     passInput.required = true;
-    form.appendChild(passInput);
 
-    const submit = document.createElement("input");
+    const submit = makeElement(form, "", "input");
     submit.type = "submit";
     submit.value = "Login";
-    form.appendChild(submit);
 
-    console.log("try");
     form.addEventListener("submit", (e) => {
-        e.preventDefault();
-        e.stopPropagation();
         const valid = validate(passInput.value);
         if (valid) {
             form.style.display = "none";
@@ -80,6 +76,8 @@ const formAppEntryValidation = (container) => {
             label.style.paddingRight = "0px";
             label.style.color = "red";
         }
+        e.preventDefault();
+        e.stopPropagation();
     });
 };
 
@@ -95,13 +93,10 @@ export const addFormAppClasses = (
     newAppHead.classList.add("form-app-container__head");
     newAppControls.classList.add("form-app-container__head--controls");
     newAppTitle.classList.add("form-app-container__head--title");
-    const titleImage = document.createElement("img");
-    titleImage.src = "https://img.icons8.com/nolan/64/reminders.png";
-    newAppTitle.appendChild(titleImage);
-    const titleTextContainer = document.createElement("h2");
-    const titleText = document.createTextNode("Reminders");
-    titleTextContainer.appendChild(titleText);
-    newAppTitle.appendChild(titleTextContainer);
 
+    const titleImage = makeElement(newAppTitle, "", "img");
+    titleImage.src = "https://img.icons8.com/nolan/64/reminders.png";
+    const titleTextContainer = makeElement(newAppTitle, "", "h2");
+    titleTextContainer.innerHTML = "Reminders";
     formAppEntryValidation(newAppBody);
 };

@@ -11,7 +11,7 @@ export const addIconToFooter = (app) => {
         "foot-container__icons--holder",
         "div"
     );
-    const image = makeElement(iconToAdd, "icons__holder--image", "img");
+    const image = makeElement(iconToAdd, "", "img");
 
     switch (app) {
         case "form-app":
@@ -32,7 +32,6 @@ export const addIconToFooter = (app) => {
     }
 
     iconToAdd.addEventListener("click", (e) => {
-        e.stopPropagation();
         const appClass = `${app}-container`;
         const appsOfClass = document.getElementsByClassName(appClass);
         const allAppsOpen = document.getElementsByClassName("app-container");
@@ -40,6 +39,7 @@ export const addIconToFooter = (app) => {
             minimiseApp(allAppsOpen[i]);
         }
         appsOfClass[0].classList.remove("hide");
+        e.stopPropagation();
     });
 };
 

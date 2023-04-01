@@ -23,8 +23,8 @@ for (let i = 0; i < appShortcuts.length; i++) {
 
 // makes windows menu pop uo
 document.getElementsByTagName("body")[0].addEventListener("click", (e) => {
-    e.stopPropagation();
     menuPopUp.classList.add("foot-container__menu--hide");
+    e.stopPropagation();
 });
 
 initialiseDateTime(timeHolder, dateHolder);

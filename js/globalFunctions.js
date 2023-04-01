@@ -1,9 +1,11 @@
 import { makeAppBase } from "./appCreation.js";
 import { removeItemFromFooter, addIconToFooter } from "./footerFunctions.js";
 
-export const makeElement = (container, className, elType) => {
+export const makeElement = (container, className = "", elType) => {
     const appSection = document.createElement(elType);
-    appSection.classList.add(className);
+    if (className) {
+        appSection.classList.add(className);
+    }
     container.appendChild(appSection);
     return appSection;
 };

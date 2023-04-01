@@ -53,12 +53,9 @@ export const addNotesClasses = (
     newAppHead.classList.add("notes-app-container__head");
     newAppControls.classList.add("notes-app-container__head--controls");
     newAppTitle.classList.add("notes-app-container__head--title");
-
-    const titleImage = makeElement(newAppTitle, "title-image", "img");
+    const titleImage = makeElement(newAppTitle, "", "img");
     titleImage.src = "https://img.icons8.com/nolan/64/windows-notepad.png";
-
-    const titleTextContainer = makeElement(newAppTitle, "-title-text", "h2");
+    const titleTextContainer = makeElement(newAppTitle, "", "h2");
     titleTextContainer.innerHTML = "References - Notepad";
-
     fillNotesApp(newAppBody);
 };
