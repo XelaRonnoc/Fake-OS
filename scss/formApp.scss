@@ -1,0 +1,68 @@
+@use "pallette";
+
+.form-app-container {
+    font-family: Arial, Helvetica, sans-serif;
+    border: 1px solid rgba($color: #2b2a2a, $alpha: 1);
+
+    &__head {
+        height: 50px;
+        border-bottom: 1px solid pallette.$controlHoverBackgroundColor;
+        background-color: pallette.$appInternalDivColor;
+
+        &--title {
+            display: flex;
+            color: pallette.$appControlIconColor;
+
+            & > img {
+                padding: 3px;
+                width: 20px;
+                height: 20px;
+            }
+
+            & h2 {
+                font-size: medium;
+                font-weight: 100;
+                margin: 0;
+                padding: 3px;
+            }
+        }
+    }
+
+    &__body {
+        display: flex;
+        flex-direction: column;
+
+        &--form {
+            justify-self: flex-start;
+            display: flex;
+            flex-direction: column;
+
+            & button {
+                height: 30px;
+            }
+        }
+        &--validation-form {
+            align-self: center;
+            width: 300px;
+            padding: 50px;
+            border-radius: 12px;
+            background-color: pallette.$appInternalDivColor;
+            margin-bottom: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 5px;
+
+            & input {
+                box-sizing: content-box;
+                width: 200px;
+                padding: 0;
+            }
+
+            & label {
+                padding-right: 100px;
+                font-size: 14px;
+            }
+        }
+    }
+}

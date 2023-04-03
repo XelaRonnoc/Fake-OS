@@ -4,25 +4,225 @@
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="stylesheet" href="styles.css" />
-        <title>Document</title>
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css"
+        />
+        <link rel="stylesheet" href="./scss/styles.css" />
+        <script
+            src="https://kit.fontawesome.com/6c7029be62.js"
+            crossorigin="anonymous"
+        ></script>
+        <script type="module" src="./js/script.js" defer></script>
+        <title>Fake OS</title>
     </head>
     <body>
-        <div class="container">
-            <img
-                class="container__icon"
-                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/chrome/chrome-original-wordmark.svg"
-            />
+        <div class="icon-container">
+            <div class="icon-container__card card form-app">
+                <img
+                    class="card__icon app-shortcut form-app"
+                    src="https://img.icons8.com/nolan/64/reminders.png"
+                />
+                <p class="card__name form-app">Reminders</p>
+            </div>
 
-            <img
-                class="container__icon"
-                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/unrealengine/unrealengine-original.svg"
-            />
+            <div class="icon-container__card card image-app">
+                <img
+                    class="card__icon app-shortcut image-app"
+                    src="https://img.icons8.com/nolan/64/pictures-folder.png"
+                />
+                <p class="card__name image-app">Photos</p>
+            </div>
 
-            <img
-                class="container__icon"
-                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/stylus/stylus-original.svg"
-            />
+            <div class="icon-container__card card notes-app">
+                <img
+                    class="card__icon app-shortcut notes-app"
+                    src="https://img.icons8.com/nolan/64/windows-notepad.png"
+                />
+                <p class="card__name notes-app">Notepad (Icon8Refs)</p>
+            </div>
         </div>
+
+        <footer class="foot-container">
+            <div class="foot-container--left">
+                <div class="foot-container__menu">
+                    <button id="menuButton">
+                        <i class="devicon-windows8-original menu-icon"></i>
+                    </button>
+                    <div class="foot-container__menu--search-bar">
+                        <div class="search-icon-container">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </div>
+                        <input type="text" placeholder="Type here to search" />
+                    </div>
+
+                    <div
+                        id="menuPopUp"
+                        class="foot-container__menu--hide foot-container__menu--display"
+                    >
+                        <div class="foot-container__pop-up--start">
+                            <div id="startTitle">
+                                <i class="fa-solid fa-bars"></i>
+                            </div>
+                            <section>
+                                <div id="user">
+                                    <i class="fa-solid fa-user"></i>
+                                </div>
+                                <div id="documents">
+                                    <i class="fa-solid fa-file"></i>
+                                </div>
+                                <div id="pictures">
+                                    <i class="fa-regular fa-images"></i>
+                                </div>
+                                <div id="setting">
+                                    <i class="fa-solid fa-gear"></i>
+                                </div>
+                                <div id="power">
+                                    <i class="fa-solid fa-power-off"></i>
+                                </div>
+                            </section>
+                        </div>
+                        <div class="foot-container__pop-up--select-bar">
+                            <div class="select-bar app-shortcut form-app">
+                                <img
+                                    class="select-bar__icon form-app"
+                                    src="https://img.icons8.com/nolan/64/reminders.png"
+                                />
+                                <p class="form-app">Reminders</p>
+                            </div>
+                            <div class="select-bar app-shortcut image-app">
+                                <img
+                                    class="select-bar__icon image-app"
+                                    src="https://img.icons8.com/nolan/64/pictures-folder.png"
+                                />
+                                <p class="image-app">Photos</p>
+                            </div>
+                            <div class="select-bar app-shortcut notes-app">
+                                <img
+                                    class="select-bar__icon notes-app"
+                                    src="https://img.icons8.com/nolan/64/windows-notepad.png"
+                                />
+                                <p class="notes-app">Notepad (Icon8Refs)</p>
+                            </div>
+                        </div>
+
+                        <div class="foot-container__pop-up--grid-section">
+                            <div>
+                                <img
+                                    src="https://img.icons8.com/nolan/64/office-365.png"
+                                />
+                                <p>Office 365</p>
+                            </div>
+                            <div>
+                                <img
+                                    src="https://img.icons8.com/nolan/64/ms-word.png"
+                                />
+                                <p>Word</p>
+                            </div>
+                            <div>
+                                <img
+                                    src="https://img.icons8.com/nolan/64/ms-edge-new.png"
+                                />
+                                <p>Edge</p>
+                            </div>
+                            <div>
+                                <img
+                                    src="https://img.icons8.com/nolan/64/doom-logo.png"
+                                />
+                                <p>Doom</p>
+                            </div>
+                            <div>
+                                <img
+                                    src="https://img.icons8.com/nolan/64/music.png"
+                                />
+                                <p>Music</p>
+                            </div>
+                            <div>
+                                <img
+                                    src="https://img.icons8.com/nolan/64/knight.png"
+                                />
+                                <p>Casual Games</p>
+                            </div>
+                            <div>
+                                <img
+                                    src="https://img.icons8.com/nolan/64/dropbox.png"
+                                />
+                                <p>Dropbox</p>
+                            </div>
+                            <div>
+                                <img
+                                    src="https://img.icons8.com/nolan/64/shop-local.png"
+                                />
+                                <p>Microsoft Store</p>
+                            </div>
+                            <div>
+                                <img
+                                    src="https://img.icons8.com/nolan/64/clapperboard.png"
+                                />
+                                <p>Videos</p>
+                            </div>
+                            <div>
+                                <img
+                                    src="https://img.icons8.com/nolan/64/restart.png"
+                                />
+                                <p>Update</p>
+                            </div>
+                            <div>
+                                <img
+                                    src="https://img.icons8.com/nolan/64/security-checked.png"
+                                />
+                                <p>Anti-Virus</p>
+                            </div>
+                            <div>
+                                <img
+                                    src="https://img.icons8.com/nolan/64/plus.png"
+                                />
+                                <p>Add item</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="foot-container__left-static-icon">
+                    <p><i class="fa-solid fa-bars-progress"></i></p>
+                </div>
+                <div class="foot-container__icons"></div>
+            </div>
+
+            <div class="foot-container--right">
+                <div class="foot-container__weather">
+                    <p>
+                        <i class="fa-solid fa-cloud-sun"></i> 25&#176; Partly
+                        Cloudy
+                    </p>
+                </div>
+                <div class="foot-container__mini-icon">
+                    <p><i class="fa-solid fa-chevron-up"></i></p>
+                </div>
+                <div class="foot-container__mini-icon">
+                    <p><i class="fa-solid fa-video"></i></p>
+                </div>
+                <div class="foot-container__mini-icon">
+                    <p><i class="fa-solid fa-cloud"></i></p>
+                </div>
+                <div class="foot-container__mini-icon">
+                    <p><i class="fa-solid fa-wifi"></i></p>
+                </div>
+                <div class="foot-container__mini-icon">
+                    <p><i class="fa-solid fa-battery-three-quarters"></i></p>
+                </div>
+                <div class="foot-container__mini-icon">
+                    <p>ENG</p>
+                </div>
+                <div class="foot-container__time">
+                    <div id="dateTime">
+                        <p id="time"></p>
+                        <p id="date"></p>
+                    </div>
+                </div>
+                <div class="foot-container__notification">
+                    <i class="fa-regular fa-message"></i>
+                </div>
+            </div>
+        </footer>
     </body>
 </html>
