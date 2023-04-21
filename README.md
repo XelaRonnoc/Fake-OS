@@ -12,3 +12,7 @@ The "Reminders app" which uses some very not secure password verification to all
 that has both heading and body to the NotePad app as a new entry. 
 The note pad app displays all saved reminders as well as a reference list for the icons utilised in the creation of this application
 The Images app just displays some images of cats.
+
+
+To Do:
+  - make this more object oriented with the applications
